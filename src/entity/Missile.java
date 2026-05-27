@@ -27,7 +27,7 @@ public class Missile extends Entity {
         this.speed = speed;
 
         missileImg = new ImageIcon(
-                getClass().getResource("/PracticaJuegos/Sky/Images/Left.png")
+                getClass().getResource("/Images/Left.png")
         ).getImage();
 
 

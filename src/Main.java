@@ -1,5 +1,4 @@
-package gui;
-
+import gui.GamePanel;
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,7 +9,7 @@ public class Main {
         window.setResizable(true);
         window.setTitle("Sky Defense");
 
-        Image image = new ImageIcon(Main.class.getResource("/PracticaJuegos/Sky/Images/logo.png")).getImage();
+        Image image = new ImageIcon(Main.class.getResource("/Images/logo.png")).getImage();
         window.setIconImage(image);
 
         GamePanel gamePanel = new GamePanel();

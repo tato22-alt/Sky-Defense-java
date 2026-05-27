@@ -28,7 +28,7 @@ public class Drone extends Entity {
         this.shootCooldown = shootCooldown;
 
         droneImg = new ImageIcon(
-                getClass().getResource("/PracticaJuegos/Sky/Images/Down.png")
+                getClass().getResource("/Images/Down.png")
         ).getImage();
     }
 
