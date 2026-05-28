@@ -1,5 +1,7 @@
 package entity;
 
+import game.Explosion;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,7 +14,11 @@ public class Missile extends Entity {
     Image missileImg;
 
     int explosionY;
-    boolean exploded;
+    Explosion explosion;
+
+    boolean exploding;
+    boolean finished;
+    boolean damageApplied;
 
 
     public Missile(int startX, int startY, int speed, int screenHeight) {
@@ -27,26 +33,49 @@ public class Missile extends Entity {
         this.speed = speed;
 
         missileImg = new ImageIcon(
-                getClass().getResource("/Images/Left.png")
+                getClass().getResource("/Images/Missile/Missile.png")
         ).getImage();
 
 
         setExplosionAltitude();
 
-        exploded = false;
+        exploding = false;
+        finished = false;
+        damageApplied = false;
     }
 
     @Override
     public void update() {
-        move();
 
-        exploded = shouldExplode();
+        if (!exploding){
+            move();
+
+            if (shouldExplode()){
+                exploding = true;
+                explode();
+            }
+        }
+
+        if (explosion != null){
+
+            explosion.update();
+
+            if (explosion.finished()){
+                finished = true;
+            }
+        }
     }
+
 
     public void draw(Graphics g) {
-        g.drawImage(missileImg, x, y, missileWidth, missileHeight, null);
-    }
+        if (!exploding){
+            g.drawImage(missileImg, x, y, missileWidth, missileHeight, null);
+        }
 
+        if (explosion != null){
+            explosion.draw(g);
+        }
+    }
 
 
     public void move(){
@@ -54,16 +83,11 @@ public class Missile extends Entity {
     }
 
     public void explode(){
-
+        explosion = new Explosion(x,y);
     }
 
     public boolean shouldExplode(){
         return y >= explosionY;
-
-    }
-
-    public boolean isExploded() {
-        return exploded;
     }
 
     public void setExplosionAltitude(){
@@ -73,5 +97,48 @@ public class Missile extends Entity {
     public int getAltitude(){return y;}
 
     public int getX(){return x;}
+
+    public boolean isExploding(){
+        return exploding;
+    }
+
+    public void setExplosion(){
+        exploding = true;
+    }
+
+    public boolean isFinished(){
+        return finished;
+    }
+
+    public boolean isDamageApplied(){
+        return damageApplied;
+    }
+
+    public void setDamageApplied(boolean damageApplied){
+        this.damageApplied = damageApplied;
+    }
+
+    public Explosion getExplosion(){
+        return explosion;
+    }
+
+    public boolean collidesWith(Plane plane){
+
+        Rectangle missileBounds = new Rectangle(
+                x,
+                y,
+                missileWidth,
+                missileHeight
+        );
+
+        Rectangle planeBounds = new Rectangle(
+                plane.getX(),
+                plane.getY(),
+                plane.getWidth(),
+                plane.getHeight()
+        );
+
+        return missileBounds.intersects(planeBounds);
+    }
 
 }

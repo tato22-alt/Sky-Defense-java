@@ -21,14 +21,14 @@ public class Drone extends Entity {
 
         this.direction = direction;
 
-        droneWidth = 48;
-        droneHeight = 48;
+        droneWidth = 70;
+        droneHeight = 70;
 
         this.speed = speed;
         this.shootCooldown = shootCooldown;
 
         droneImg = new ImageIcon(
-                getClass().getResource("/Images/Down.png")
+                getClass().getResource("/Images/Drone/Drone.png")
         ).getImage();
     }
 

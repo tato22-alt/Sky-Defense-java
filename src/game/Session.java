@@ -115,28 +115,46 @@ public class Session {
 
             missile.update();
 
-            if(missile.isExploded()){
+            if(!missile.isExploding()
+                    && missile.collidesWith(plane)){
 
-                Explosion explosion = new Explosion(missile.getX(), missile.getAltitude());
-                int damage = explosion.calculateDamage(plane);
+                missile.explode();
+
+                missile.setExplosion();
+            }
+
+            if(missile.isExploding() && !missile.isDamageApplied()){
+
+                int damage =
+                        missile.getExplosion()
+                                .calculateDamage(plane);
 
                 plane.reduceEnergy(damage);
+
                 player.calculateScore(damage);
 
-                if (plane.getCurrentEnergy()<=0){
-                    if (player.getLives()>0){
+                missile.setDamageApplied(true);
+
+                if (plane.getCurrentEnergy() <= 0){
+
+                    if (player.getLives() > 0){
+
                         player.loseLife();
+
                         plane.restoreEnergy();
-                    }
-                    else{
+
+                    } else {
+
                         gameState = GameState.Game_Over;
                     }
                 }
+            }
+
+            if(missile.isFinished()){
 
                 missiles.remove(i);
 
                 i--;
-
             }
 
         }

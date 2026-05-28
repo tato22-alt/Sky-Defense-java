@@ -1,14 +1,44 @@
 package game;
 
 import entity.Plane;
+import java.awt.*;
 
 public class Explosion {
     int x;
     int y;
+    int radius;
+
+    int duration;
+    int currentFrame;
 
     public Explosion(int x,int y){
         this.x = x;
         this.y = y;
+
+        radius = 150;
+
+        duration = 30;
+        currentFrame = 0;
+    }
+
+    public void update(){
+        currentFrame++;
+    }
+
+    public boolean finished(){
+        return currentFrame >= duration;
+    }
+
+    public void draw(Graphics g){
+
+        g.setColor(new Color(255,0,0,100));
+
+        g.fillOval(
+                x - radius,
+                y - radius,
+                radius * 2,
+                radius * 2
+        );
     }
 
     public int calculateDamage(Plane plane){

@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(true);
+        window.setResizable(false);
         window.setTitle("Sky Defense");
 
         Image image = new ImageIcon(Main.class.getResource("/Images/logo.png")).getImage();

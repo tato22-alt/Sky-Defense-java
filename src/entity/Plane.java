@@ -16,7 +16,7 @@ public class Plane extends Entity{
     int currentEnergy;
 
     public Plane(int screenWidth, int screenHeight, int tileSize) {
-        this.planeImg = new ImageIcon(getClass().getResource("/Images/Up.png")).getImage();
+        this.planeImg = new ImageIcon(getClass().getResource("/Images/Plane/Up.png")).getImage();
         this.screenHeight = screenHeight;
         this.screenWidth = screenWidth;
         this.tileSize = tileSize;
@@ -69,6 +69,10 @@ public class Plane extends Entity{
     public int getX(){return x;}
 
     public int getCurrentEnergy(){return currentEnergy;}
+
+    public int getWidth(){return planeWidth;}
+
+    public int getHeight(){return planeHeight;}
 
     public void reduceEnergy(int amount){
         currentEnergy -= amount;
