@@ -157,6 +157,13 @@ public class Session {
 
     public void draw(Graphics g){
 
+        if(gameState == GameState.Game_Over){
+
+            drawGameOverScreen(g);
+
+            return;
+        }
+
         plane.draw(g);
 
         squadron.draw(g);
@@ -200,6 +207,91 @@ public class Session {
                 20,
                 160
         );
+    }
+
+    public void drawGameOverScreen(Graphics g){
+
+        Graphics2D g2 = (Graphics2D) g;
+
+        // FONDO
+
+        g2.setColor(Color.BLACK);
+
+        g2.fillRect(
+                0,
+                0,
+                screenWidth,
+                screenHeight
+        );
+
+        // TITULO
+
+        g2.setColor(Color.RED);
+
+        g2.setFont(
+                new Font("Arial", Font.BOLD, 64)
+        );
+
+        String title = "GAME OVER";
+
+        int titleX = getCenteredTextX(g2, title);
+
+        g2.drawString(
+                title,
+                titleX,
+                220
+        );
+
+        // SCORE
+
+        g2.setColor(Color.WHITE);
+
+        g2.setFont(
+                new Font("Arial", Font.BOLD, 32)
+        );
+
+        String scoreText =
+                "Score: " + player.getScore();
+
+        int scoreX = getCenteredTextX(g2, scoreText);
+
+        g2.drawString(
+                scoreText,
+                scoreX,
+                320
+        );
+
+        // RESTART
+
+        g2.setFont(
+                new Font("Arial", Font.PLAIN, 24)
+        );
+
+        String restartText =
+                "Press ENTER to restart";
+
+        int restartX =
+                getCenteredTextX(g2, restartText);
+
+        g2.drawString(
+                restartText,
+                restartX,
+                420
+        );
+    }
+
+
+    public int getCenteredTextX(
+            Graphics2D g2,
+            String text
+    ){
+
+        int textLength =
+                (int)g2.getFontMetrics()
+                        .getStringBounds(text, g2)
+                        .getWidth();
+
+        return screenWidth / 2 - textLength / 2;
     }
 
     public GameState getGameState(){

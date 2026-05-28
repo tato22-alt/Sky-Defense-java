@@ -79,7 +79,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update(){
         if (session.getGameState() == GameState.Game_Over){
-            if(keyH.upPressed){
+            if(keyH.enterPressed){
                 session.startNewGame();
             }
             return;
