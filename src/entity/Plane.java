@@ -70,6 +70,8 @@ public class Plane extends Entity{
 
     public int getCurrentEnergy(){return currentEnergy;}
 
+    public int getMaxEnergy(){return maxEnergy;}
+
     public int getWidth(){return planeWidth;}
 
     public int getHeight(){return planeHeight;}

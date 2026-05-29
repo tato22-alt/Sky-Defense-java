@@ -202,17 +202,14 @@ public class Session {
 
         g2.setColor(Color.WHITE);
 
+        drawEnergyBar(g2);
+
         g2.drawString(
                 "Lives: " + player.getLives(),
                 20,
-                40
-        );
-
-        g2.drawString(
-                "Energy: " + plane.getCurrentEnergy(),
-                20,
                 80
         );
+
 
         g2.drawString(
                 "Score: " + player.getScore(),
@@ -329,5 +326,85 @@ public class Session {
         gameState = GameState.Running;
     }
 
+    public void drawEnergyBar(Graphics2D g2){
+
+        int maxEnergy = plane.getMaxEnergy();
+
+        int currentEnergy = plane.getCurrentEnergy();
+
+
+        // =========================
+        // BAR SETTINGS
+        // =========================
+
+        int barX = 20;
+        int barY = 30;
+
+        int barWidth = 200;
+        int barHeight = 25;
+
+
+        // =========================
+        // BACKGROUND
+        // =========================
+
+        g2.setColor(Color.RED);
+
+        g2.fillRect(
+                barX,
+                barY,
+                barWidth,
+                barHeight
+        );
+
+
+        // =========================
+        // CURRENT ENERGY
+        // =========================
+
+        int currentWidth =
+                (int)(
+                        ((double) currentEnergy / maxEnergy)
+                                * barWidth
+                );
+
+        g2.setColor(Color.GREEN);
+
+        g2.fillRect(
+                barX,
+                barY,
+                currentWidth,
+                barHeight
+        );
+
+
+        // =========================
+        // BORDER
+        // =========================
+
+        g2.setColor(Color.WHITE);
+
+        g2.drawRect(
+                barX,
+                barY,
+                barWidth,
+                barHeight
+        );
+
+
+        // =========================
+        // TEXT
+        // =========================
+
+        g2.setFont(
+                new Font("Arial", Font.BOLD, 18)
+        );
+
+        g2.drawString(
+                "Energy",
+                barX,
+                barY - 10
+        );
+    }
 
 }
