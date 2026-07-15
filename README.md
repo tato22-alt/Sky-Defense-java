@@ -2,13 +2,13 @@
 
 Sky Defense es un juego 2D desarrollado en equipo como proyecto académico de Programación Orientada a Objetos.
 
-El objetivo del proyecto fue aplicar conceptos de POO, separación de responsabilidades, manejo de estados del juego, interacción con teclado, renderizado con Swing y trabajo colaborativo con Git/GitHub.
+El objetivo del proyecto fue aplicar conceptos de POO en un caso práctico, trabajando con lógica de juego, entidades, estados, interacción del usuario, renderizado con Swing y organización del código en clases con responsabilidades diferenciadas.
 
 ## Estado del proyecto
 
 Proyecto académico finalizado.
 
-Este repositorio corresponde a un trabajo grupal. Se presenta como parte de mi portfolio para mostrar práctica con Java, Programación Orientada a Objetos, diseño de clases y desarrollo colaborativo.
+Este repositorio forma parte de mi portfolio para mostrar práctica con Java, Programación Orientada a Objetos, desarrollo colaborativo y defensa técnica de decisiones de diseño.
 
 ## Tecnologías utilizadas
 
@@ -17,41 +17,52 @@ Este repositorio corresponde a un trabajo grupal. Se presenta como parte de mi p
 - Programación Orientada a Objetos
 - Git / GitHub
 
-## Conceptos aplicados
-
-- Clases y objetos
-- Encapsulamiento
-- Herencia y polimorfismo
-- Separación de responsabilidades
-- Manejo de estados del juego
-- Patrón MVC
-- Patrón State
-- Principios SOLID
-- Principios GRASP
-- Renderizado básico con Swing
-- Entrada por teclado
-
 ## Descripción general
 
-El juego consiste en controlar un avión dentro de un escenario 2D, evitando amenazas y respondiendo a eventos mediante entradas del usuario.
+El juego consiste en controlar un avión dentro de un escenario 2D, respondiendo a eventos del juego mediante entradas del usuario y evitando amenazas durante la partida.
 
-El proyecto incluye lógica de entidades, estados de juego, actualización del escenario, renderizado visual e interacción con teclado.
+El proyecto incluye lógica de entidades, actualización del escenario, manejo de estados del juego, renderizado visual e interacción con teclado.
+
+## Conceptos aplicados
+
+- Clases y objetos.
+- Encapsulamiento.
+- Herencia y polimorfismo.
+- Separación de responsabilidades.
+- Manejo de estados del juego.
+- Patrón MVC.
+- Patrón State.
+- Principios SOLID.
+- Principios GRASP.
+- Renderizado básico con Swing.
+- Entrada por teclado.
+- Trabajo colaborativo con Git/GitHub.
 
 ## Participación
 
-Participé en el desarrollo grupal del proyecto, trabajando sobre el análisis del flujo general del juego, la organización del código, el uso de Git/GitHub y la defensa técnica de conceptos de Programación Orientada a Objetos.
+Participé en el desarrollo grupal del proyecto, colaborando en la implementación y análisis de funcionalidades del juego, la organización del código y el trabajo colaborativo con Git/GitHub.
 
-Durante el proyecto se trabajaron decisiones relacionadas con separación de responsabilidades, estados del juego, entidades, vista, control e interacción del usuario.
+Trabajé sobre el flujo general del juego, la separación de responsabilidades entre clases, el manejo de estados, entidades, vista, control e interacción del usuario.
 
-## Aprendizajes
+Además, participé en la defensa técnica del proyecto, explicando decisiones relacionadas con Programación Orientada a Objetos, patrones de diseño, SOLID y GRASP.
 
-- Organización de un proyecto Java con varias clases.
+## Responsabilidades y conceptos trabajados
+
+- Implementación y análisis de lógica de juego en Java.
+- Organización de clases y responsabilidades.
 - Aplicación práctica de Programación Orientada a Objetos.
 - Separación entre lógica, entidades, control y vista.
+- Manejo de estados del juego.
 - Uso de Swing para interfaz gráfica y renderizado.
-- Trabajo colaborativo con ramas, commits y repositorios.
+- Trabajo colaborativo mediante Git/GitHub.
 - Defensa técnica de decisiones de diseño.
+
+## Valor del proyecto
+
+Este proyecto me permitió practicar cómo organizar una aplicación Java con múltiples clases, aplicar conceptos de POO en un escenario interactivo y comprender cómo distintas partes del sistema se relacionan dentro del flujo de un juego.
+
+También me permitió trabajar en equipo, coordinar cambios de código y explicar decisiones técnicas durante una instancia de evaluación académica.
 
 ## Nota
 
-Este proyecto fue realizado con fines académicos. Puede requerir mejoras de documentación, estructura o refactorización para un uso más profesional.
+Este proyecto fue realizado con fines académicos y en equipo. Puede requerir mejoras de documentación, estructura o refactorización para un uso más profesional.
